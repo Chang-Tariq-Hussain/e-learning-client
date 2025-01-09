@@ -1,0 +1,103 @@
+{
+    "token": {
+      "colorPrimary": "#549e2f",
+      "colorSuccess": "#52c41a",
+      "colorWarning": "#faad14",
+      "colorError": "#ff4d4f",
+      "colorTextBase": "#000",
+      "colorTextSecondary": "#595959",
+      "colorBackground": "#ffffff",
+      "colorBorder": "#d9d9d9",
+      "colorDisabled": "rgba(0, 0, 0, 0.25)",
+      "borderRadius": 4,
+      "fontFamily": "Roboto, sans-serif",
+      "fontSizeBase": 14
+    },
+    "components": {
+      "Button": {
+        "colorPrimary": "#549e2f",
+        "borderRadius": 4,
+        "fontSize": 14,
+        "paddingHorizontal": 16,
+        "heightSmall": 24,
+        "heightDefault": 32,
+        "heightLarge": 40
+      },
+      "Card": {
+        "padding": 24,
+        "borderRadius": 4,
+        "boxShadow": "0 3px 6px rgba(0, 0, 0, 0.1)",
+        "colorBorder": "#d9d9d9",
+        "colorBackground": "#fff"
+      },
+      "Table": {
+        "headerBackground": "#fafafa",
+        "headerTextColor": "#000",
+        "borderColor": "#d9d9d9",
+        "rowHoverBackground": "#f5f5f5",
+        "rowSelectedBackground": "#e6f7ff"
+      },
+      "Input": {
+        "borderRadius": 4,
+        "paddingHorizontal": 12,
+        "height": 32,
+        "colorBorder": "#d9d9d9",
+        "colorHoverBorder": "#40a9ff",
+        "colorFocusBorder": "#549e2f",
+        "backgroundColor": "#fff"
+      },
+      "Modal": {
+        "colorBackground": "#fff",
+        "padding": 24,
+        "borderRadius": 8,
+        "boxShadow": "0 4px 12px rgba(0, 0, 0, 0.15)"
+      },
+      "Tabs": {
+        "colorText": "#000",
+        "colorActiveText": "#1890ff",
+        "colorBorder": "#d9d9d9",
+        "tabPadding": 16
+      },
+      "Typography": {
+        "headingColor": "rgba(0, 0, 0, 0.85)",
+        "textColor": "rgba(0, 0, 0, 0.65)",
+        "textColorSecondary": "rgba(0, 0, 0, 0.45)",
+        "fontFamily": "Roboto, sans-serif",
+        "fontSizeBase": 14,
+        "lineHeightBase": 1.5715
+      },
+      "Form": {
+        "itemMarginBottom": 16,
+        "labelColor": "rgba(0, 0, 0, 0.85)",
+        "colorError": "#ff4d4f",
+        "fontSizeBase": 14
+      },
+      "Menu": {
+        "itemPaddingHorizontal": 20,
+        "colorBackground": "#fff",
+        "colorItemHoverBackground": "#e6f7ff",
+        "colorItemActiveBackground": "#1890ff",
+        "colorText": "#000",
+        "colorTextActive": "#fff"
+      },
+      "Dropdown": {
+        "padding": 12,
+        "borderRadius": 4,
+        "colorBackground": "#fff",
+        "boxShadow": "0 2px 8px rgba(0, 0, 0, 0.15)"
+      },
+      "Pagination": {
+        "itemSize": 32,
+        "colorActiveBorder": "#1890ff",
+        "colorActiveBackground": "#e6f7ff",
+        "colorText": "#000"
+      },
+      "Progress": {
+        "lineWidth": 6,
+        "colorStroke": "#1890ff",
+        "colorBackground": "#f5f5f5",
+        "fontSize": 12
+      }
+    }
+  }
+  

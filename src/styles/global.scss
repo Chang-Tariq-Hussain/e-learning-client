@@ -1,0 +1,110 @@
+@use './_fonts.scss';
+@use './colors.scss';
+
+body {
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  // background-color: #f9f9f9;
+  background: #ECE9E6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.theme-btn{
+  width:150px;
+}
+
+.theme-btn-primary{
+  background:var(--primary-color);
+  color:#fff;
+
+  &:hover{
+    background:var(--primary-color);
+    color:#fff;
+  }
+}
+
+.theme-btn-secondary{
+  background:var(--secondary-color);
+
+  &:hover{
+    background:var(--secondary-color);
+    color:#333;
+  }
+} 
+
+.form-field{
+  margin:10px 0;
+  &.required{
+    .field-label{
+      color: #A8A9BA;
+      font-family: var(--font-family);
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      margin-bottom: 10px;
+      .steric{
+        color: var(--Y1, #E7B300);
+        font-family: var(--font-family);
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        display: inline-block;
+      }
+    }
+  }
+  .field-label{
+    .steric{
+      display: none;
+    }
+  }
+}
+
+.padding-layout{
+  padding:40px 0;
+}
+
+.btn-light-lg{
+  background: var(--primary-color);
+  color: var(--background);
+  font-family: var(--font-family);
+  font-weight: 500;
+  padding: 12px 24px;
+  font-style: normal;
+  width: 100%;
+  line-height: normal;
+  // border: 1px solid var(--secondary-color);
+  &:hover{
+    color: var(--background);
+    // border: 1px solid var(--secondary-color);
+    background: var(--primary-color-hover);;
+    .prefix-icon{
+      svg{
+        path{
+          fill: var(--primary-color-hover);
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+}
+
+.row>*{
+  padding:0;
+}

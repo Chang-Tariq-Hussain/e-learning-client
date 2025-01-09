@@ -1,0 +1,136 @@
+.filter-dropdown{
+    .btn-filter{
+      border-radius: 8px;
+      border: 1px solid var(--theme-border);
+      background: var(--input-background);
+      color: var(--font-color-dark-1);
+      //transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+      span{
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        margin-left: 5px;
+        margin-right: 20px;
+      }
+      .filter-down-icon{
+        margin: 0;
+      }
+      .filter-text{
+
+      }
+      svg{
+        path{
+          fill: var(--font-color-dark-1);
+        }
+      }
+      &:after{
+        display: none;
+      }
+    }
+  .dropdown{
+    //transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+  }
+  .dropdown-menu{
+    border: 1px solid var(--theme-border);
+    background: var(--card-color);
+    min-width: 288px;
+    padding: 10px;
+    //transition: all 0.3s;
+    //animation: 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadein;
+    //transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+    //&.show{
+    //  transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+    //}
+    .return{
+      p{
+        color: var(--font-color-grey-1);
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        span{
+          cursor: pointer;
+          font-size: 18px;
+        }
+      }
+    }
+    .filter-dropdown-header{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      h4{
+        color: var(--font-color-dark-1);
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+    }
+    .filter-dropdown-body{
+      .filter-dropdown-list{
+        ul{
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          li{
+            color: var(--font-color-dark-1);
+            font-family: Inter;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--theme-border);
+            cursor: pointer;
+            &:last-child{
+              border-bottom: 1px solid transparent;
+            }
+            span{
+              transform: rotate(-90deg);
+              margin-left: auto;
+              svg{
+                path{
+                  fill:var(--font-color-dark-1)
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+}
+
+/* Apply animations to the dropdown menu */
+.show-animation {
+  animation: slideIn 0.3s ease-in-out forwards;
+}
+
+.hide-animation {
+  animation: slideOut 0.3s ease-in-out forwards;
+}

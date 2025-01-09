@@ -1,0 +1,20 @@
+.theme-upload{
+  .upload-picture-circle-wrapper .ant-upload.ant-upload-select{
+    height: 140px;
+    width: 140px;
+  }
+  .ant-upload-wrapper{
+    color: var(--font-color-dark-1);
+    .ant-upload-list-item-container{
+      color: var(--font-color-dark-1);
+    }
+    .ant-upload{
+      color: var(--font-color-dark-1);
+      .ant-upload{
+        color: var(--font-color-dark-1);
+        background: var(--input-background);
+        border-radius: 50%;
+      }
+    }
+  }
+}

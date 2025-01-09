@@ -1,0 +1,12 @@
+.header-container{
+    // background:#78b659;
+    background:#fff;
+    box-shadow:0 0 4px 2px #eee;
+
+    .logo-img{
+        width:56px;
+        height:56px;
+        object-fit:contain;
+        mix-blend-mode: multiply;
+    }
+}

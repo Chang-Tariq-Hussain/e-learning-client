@@ -1,0 +1,30 @@
+
+.home-container{
+    .content{
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+        height:80vh;
+        padding:60px 0;
+        .home-btns{
+            margin-top:auto;
+        }
+
+        .heading{
+            h3{
+                font-size:36px;
+            }
+            p{
+                margin:20px 0;
+                font-size:16px;
+            }
+
+            .e-learn-icon{
+                width:300px;
+                height:300px;
+                object-fit:contain;
+                mix-blend-mode:multiply;
+            }
+        }
+    }
+}

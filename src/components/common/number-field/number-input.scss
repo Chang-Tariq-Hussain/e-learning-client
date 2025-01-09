@@ -1,0 +1,67 @@
+.number-input{
+  &.required{
+    .field-label{
+      .steric{
+        display:inline-block;
+      }
+    }
+  }
+  .field-label{
+    color: var(--input-label);
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 10px;
+    .steric{
+      color: var(--secondary-color);
+      font-family: Inter;
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      display: none;
+    }
+  }
+  .ant-input-number{
+    border-radius: 8px;
+    border: 1px solid var(--input-border);
+    background: var(--input-background);
+    height: 50px;
+    padding: 10px;
+    width: 100%;
+
+    &:hover{
+      border:1px solid #ffcaa1;
+    }
+    &::placeholder{
+      color: var(--input-placeholder);
+    }
+    .ant-input-number-handler-wrap{
+      border-start-end-radius: 26px;
+      border-end-end-radius: 26px;
+      background: var(--input-background);
+      span{
+        svg{
+          color: var(--input-icon);
+        }
+      }
+      .ant-input-number-handler{
+        border-inline-start: 1px solid var(--theme-border);
+      }
+      .ant-input-number-handler-down{
+        border-block-start: 1px solid  var(--theme-border);
+      }
+    }
+    .ant-input-number-input-wrap{
+      input{
+        color: var(--font-color-dark-1);
+        padding: 4px 0;
+        &::placeholder{
+          color: var(--input-placeholder);
+        }
+      }
+    }
+  }
+}

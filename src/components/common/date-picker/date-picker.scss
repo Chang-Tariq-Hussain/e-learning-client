@@ -1,0 +1,93 @@
+.time-input{
+  display: flex;
+  flex-direction: column;
+  &.required{
+    .field-label{
+      .steric{
+        display:inline-block;
+      }
+    }
+  }
+  .field-label{
+    color: #A8A9BA;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 10px;
+    .steric{
+      color: var(--secondary-color);
+      font-family: Inter;
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      display: none;
+    }
+  }
+  .ant-picker{
+    border-radius: 8px;
+    //border: 1px solid var(--input-border);
+    background: var(--input-background);
+    height: 50px;
+    padding: 10px;
+    &.ant-picker-status-error{
+      background: var(--input-background);
+      &:not([disabled]) &:hover{
+        background: var(--input-background);
+      }
+    }
+    .ant-picker-range-separator{
+      .ant-picker-separator{
+        svg{
+          color: var(--input-icon);
+        }
+      }
+    }
+    .ant-picker-input{
+      input{
+        color: var(--font-color-dark-1);
+        font-family: 'Inter';
+        &::placeholder{
+          color: var(--input-placeholder);
+        }
+      }
+      .ant-picker-suffix{
+        color: var(--input-icon);
+        font-size: 25px;
+        span{
+          svg{
+            color: var(--input-icon);
+            path{
+              fill: var(--input-icon);
+            }
+          }
+        }
+      }
+      .ant-picker-clear{
+        background: var(--input-background);
+        color: #717392;
+        width: 20px;
+        height: 20px;
+        font-size: 20px;
+        margin-right: 2px;
+      }
+    }
+  }
+  .error-message{
+    color: #ff4d4f;
+  }
+  .ant-picker:not(.ant-picker-disabled).ant-picker-status-error, :where(.css-dev-only-do-not-override-1ck3jst).ant-picker:not(.ant-picker-disabled).ant-picker-status-error:not([disabled]):hover {
+    background: var(--input-background);
+    border-color: #ff4d4f;
+  }
+
+  .ant-picker:not(.ant-picker-disabled).ant-picker-status-error, :where(.css-dev-only-do-not-override-1nndw4u).ant-picker:not(.ant-picker-disabled).ant-picker-status-error:not([disabled]):hover {
+    background: var(--input-background);
+    border-color: #ff4d4f;
+  }
+
+
+}
+

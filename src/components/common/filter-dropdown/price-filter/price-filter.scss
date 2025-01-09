@@ -1,0 +1,41 @@
+.price-filter{
+  .price-filter-range{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .range{
+      color: var(--font-color-dark-1);
+      font-family: Inter;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+  .price-filter-sec{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    .ant-slider{
+      width: 100%;
+      .ant-slider-rail{
+        background: var(--theme-border);
+      }
+      .ant-slider-track{
+        background: var(--g1, linear-gradient(270deg, #38DFE4 0%, #01B0C3 100%));;
+      }
+      .ant-slider-handle{
+        background: var(--g1, linear-gradient(270deg, #38DFE4 0%, #01B0C3 100%));
+        &:hover{
+          &:after{
+            box-shadow: 0 0 0 4px #38DFE4;
+          }
+        }
+        &:after{
+          background: #38DFE4;
+          box-shadow: 0 0 0 3px #38DFE4;
+        }
+      }
+    }
+  }
+}

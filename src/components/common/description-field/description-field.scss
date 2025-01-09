@@ -1,0 +1,45 @@
+.description-field{
+  &.required{
+    .field-label{
+      .steric{
+        display:inline-block;
+      }
+    }
+  }
+  .field-label{
+    color: #848484;
+    font-family: var(--font-family);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 10px;
+    .steric{
+      color: var(--primary-color);
+      font-family: var(--font-family);
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      display: none;
+    }
+  }
+  .ant-input{
+    background: var(--input-background);
+    border: 1px solid var(--theme-border);
+    color: var(--font-color-dark-1);
+    font-family: var(--font-family);
+    padding: 15px;
+    &::placeholder{
+      color: var(--input-placeholder);
+    }
+    .ant-input-prefix{
+      color: var(--font-color-dark-1);
+      svg{
+        path{
+          fill:var(--input-icon);
+        }
+      }
+    }
+  }
+}

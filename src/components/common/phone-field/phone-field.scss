@@ -1,0 +1,75 @@
+.phone-field{
+  &.required{
+    .field-label{
+      .steric{
+        display:inline-block;
+      }
+    }
+  }
+  .field-label{
+    color: var(--input-label);
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 10px;
+    .steric{
+      color: var(--primary-color);
+      font-family: Inter;
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      display: none;
+    }
+  }
+  &.has-error{
+    .PhoneInput{
+      border-color: #ff4d4f;
+      &:hover{
+        border-color: #ffa39e;
+      }
+    }
+  }
+  .PhoneInput{
+    width: 100%;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid var(--input-border);
+    background: var(--input-background);
+    height: 50px;
+    // color: white;
+    padding: 10px 15px;
+    transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    &:hover{
+      border-color: var(--primary-color);
+    }
+
+    &.PhoneInput--disabled{
+      .PhoneInputCountrySelect{
+        width:0;
+      }
+    }
+   .PhoneInputInput{
+     font-family: Inter;
+     background: transparent;
+     border: none;
+     box-shadow: none;
+     outline: none;
+     color: var(--font-color-dark-1);
+     font-size: 14px;
+     &:focus{
+       background: transparent;
+       border: none;
+       box-shadow: none;
+       outline: none;
+     }
+   }
+  }
+
+  .PhoneInput--disabled{
+    background:rgba(0, 0, 0, 0.04);
+    color: rgba(0, 0, 0, 0.25);
+  }
+}

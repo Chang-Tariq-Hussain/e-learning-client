@@ -1,0 +1,23 @@
+.date-select{
+  .ant-picker{
+    height: 40px;
+    .ant-picker-range-separator{
+      span{
+        svg{
+          color: var(--font-color-dark-1);
+        }
+      }
+    }
+    .ant-picker-suffix{
+      color: var(--font-color-dark-1);
+    }
+    .ant-picker-clear{
+      background: var(--background-2);
+      span{
+        svg{
+          color: var(--font-color-dark-1);
+        }
+      }
+    }
+  }
+}
