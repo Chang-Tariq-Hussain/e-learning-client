@@ -4,7 +4,16 @@ import { Col, Container, Row } from 'react-bootstrap'
 import ThemeButton from '../../../components/common/theme-button/ThemeButton.tsx'
 import { Space } from 'antd'
 import eLearnImage from '../../../assets/images/illustration-1.webp'
+import { GetToken } from '../../../services/auth.service.ts'
+import { useNavigate } from 'react-router'
 const Home = () => {
+  const token = GetToken();
+  const navigate = useNavigate();
+  
+  if(token){
+    navigate('/dashboard');
+  }
+  
   return (
     <div className='home-container'>
       <Container>

@@ -24,7 +24,7 @@ export const api = axios.create({
 });
 
 api.interceptors.request.use(
-  (config) => {
+  (config:any) => {
     let token = GetToken();
     return {
       ...config,

@@ -9,7 +9,9 @@ import ThemeButton from '../../../components/common/theme-button/ThemeButton';
 import { Divider } from 'antd';
 import SelectField from '../../../components/common/select-field/SelectField';
 import { roles } from '../../../utils/constants';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
+import { useMutation } from 'react-query';
+import { SignupService } from '../../../services/auth.service';
 
 const Signup: React.FC = () => {
   const {
@@ -19,9 +21,16 @@ const Signup: React.FC = () => {
     setValue,
     clearErrors
   } = useForm();
+  const navigate = useNavigate();
+  const signupMutation = useMutation(SignupService);
 
-  const onSubmit = (values:any) => {
-    console.log("values", values);
+  const onSubmit = async(values:any) => {
+    try {
+      await signupMutation.mutateAsync(values);
+      navigate('/dashboard');
+    } catch (error) {
+      console.log("Error: ", error);
+    }
   }
 
   const options = [

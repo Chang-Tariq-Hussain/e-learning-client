@@ -1,9 +1,19 @@
-import React from 'react'
-import { Container } from 'react-bootstrap'
+import React, { useEffect } from 'react'
 import Header from './header/Header'
-import { Outlet } from 'react-router'
+import { Outlet, useNavigate } from 'react-router'
+import { GetToken } from '../../services/auth.service';
 
 const Layout:React.FC = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = GetToken();
+
+    if (token) {
+        navigate('/dashboard');
+    }
+  }, [])
+  
   return (
     <div>
       <Header/>

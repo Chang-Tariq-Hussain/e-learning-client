@@ -1,25 +1,60 @@
+// AppRoutes.tsx
+import React from "react";
+import { Routes, Route, BrowserRouter as Router } from "react-router";
+import PrivateRoute from "./PrivateRoute";
+// import { routes } from "./routes";
+import Layout from "../components/layout/Layout";
+import Login from '../pages/auth/login/Login'
+import Signup from '../pages/auth/signup/Signup'
+import LandingPage from "../pages/dashboard/landing-page/LandingPage";
+import Home from "../pages/dashboard/home/Home";
 
-import React from 'react'
-import {Route, BrowserRouter as Router, Routes} from 'react-router';
-import Login from '../pages/auth/login/Login.tsx';
-import Home from '../pages/dashboard/home/Home.tsx';
-import Signup from '../pages/auth/signup/Signup.tsx';
-import Layout from '../components/layout/Layout.tsx';
+export const routes = {
+  public: [
+    { path: "/", element: <Home /> },
+    { path: "/login", element: <Login /> },
+    { path: "/signup", element: <Signup /> },
+  ],
+  private: [
+    { path: "/dashboard", element: <LandingPage />, roles: ["user", "admin"] },
+  ],
+};
+// Example user state (replace with actual auth logic)
+const isAuthenticated = true; // Replace with actual auth state
+const userRoles = ["user"]; // Replace with actual user roles
 
-const AppRoutes:React.FC = () => {
+const AppRoutes: React.FC = () => {
   return (
-    <div>
-        <Router>
-            <Routes>
-              <Route element={<Layout/>}>
-                <Route path='/' element={<Home/>}></Route>
-                <Route  path='/login' element={<Login/>}></Route>
-                <Route  path='/signup' element={<Signup/>}></Route>
-              </Route>
-            </Routes>
-        </Router>
-    </div>
-  )
-}
+    <Router>
+      <Routes>
+        {/* Public Routes */}
+        <Route element={<Layout/>}>
+          {routes.public.map((route, index) => (
+            <Route key={index} path={route.path} element={route.element} />
+          ))}
+        </Route>
+        
 
-export default AppRoutes
+        {/* Private Routes */}
+        <Route element={<Layout />}>
+          {routes.private.map((route, index) => (
+            <Route
+              key={index}
+              path={route.path}
+              element={
+                <PrivateRoute
+                  roles={userRoles}
+                  allowedRoles={route?.roles}
+                >
+                  {route.element}
+                </PrivateRoute>
+              }
+            />
+          ))}
+        </Route>
+      </Routes>
+    </Router>
+  );
+};
+
+export default AppRoutes;

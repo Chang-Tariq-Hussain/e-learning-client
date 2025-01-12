@@ -2,11 +2,13 @@ import React from 'react';
 import './login.scss';
 import bgAuth from '../../../assets/images/auth-bg.webp';
 import { Controller, useForm } from 'react-hook-form';
-import { checkEmptySpaces, EmailValidation, maxLength, minLength, Required } from '../../../utils/patterns';
+import { checkEmptySpaces, EmailValidation, maxLength, Required } from '../../../utils/patterns';
 import TextInput from '../../../components/common/input-field/TextInput';
 import { Col, Container, Form, Row } from 'react-bootstrap';
 import ThemeButton from '../../../components/common/theme-button/ThemeButton';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
+import { useMutation } from 'react-query';
+import { LoginService } from '../../../services/auth.service';
 
 const Login: React.FC = () => {
   const {
@@ -14,9 +16,16 @@ const Login: React.FC = () => {
     formState: { errors },
     handleSubmit
   } = useForm();
-
-  const onSubmit = (values:any) => {
-    console.log("values", values);
+  const navigate = useNavigate();
+  const loginMutation = useMutation(LoginService);
+  
+  const onSubmit = async(values:any) => {
+    try {
+      await loginMutation.mutateAsync(values);
+      navigate('/dashboard');
+    } catch (error) {
+      console.log("Error: ", error);
+    }
   }
   return (
     <div className="login-container">
@@ -70,8 +79,6 @@ const Login: React.FC = () => {
                       rules={{
                         validate: checkEmptySpaces,
                         required: Required,
-                        minLength: minLength(4),
-                        maxLength: maxLength(50),
                       }}
                       render={({ field: { name, ...field } }) => (
                         <TextInput

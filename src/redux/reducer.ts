@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux';
-import authSlice from './features/authSlice';
+import authSlice from './features/authSlice.ts';
 
 
 const rootReducer = combineReducers({
