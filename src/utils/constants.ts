@@ -11,3 +11,9 @@ export const constants = {
 export const apiUrl = {
     login: 'login'
 }
+
+export const roles = {
+    "student": 10,
+    "instructor": 20,
+    "admin" : 30
+}
