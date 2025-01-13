@@ -2,10 +2,22 @@
     // background:#78b659;
     background:#fff;
     box-shadow:0 0 4px 2px #eee;
-
+    height:70px;
+    display:flex;
+    align-items:center;
+   
+    .ant-input-affix-wrapper{
+        min-width:500px;
+    }
+    
+    .header-main{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+    }
     .logo-img{
-        width:56px;
-        height:56px;
+        width:53px;
+        height:53px;
         object-fit:contain;
         mix-blend-mode: multiply;
     }

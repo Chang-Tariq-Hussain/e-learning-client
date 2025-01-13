@@ -12,6 +12,8 @@ import { roles } from '../../../utils/constants';
 import { Link, useNavigate } from 'react-router';
 import { useMutation } from 'react-query';
 import { SignupService } from '../../../services/auth.service';
+import { useDispatch } from 'react-redux';
+import { setIsLogin, setRole, setToken, setUser } from '../../../redux/features/authSlice';
 
 const Signup: React.FC = () => {
   const {
@@ -22,11 +24,19 @@ const Signup: React.FC = () => {
     clearErrors
   } = useForm();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const signupMutation = useMutation(SignupService);
 
   const onSubmit = async(values:any) => {
     try {
-      await signupMutation.mutateAsync(values);
+      const data = await signupMutation.mutateAsync(values);
+      if(data.success){
+        dispatch(setUser(data?.data?.user))
+        dispatch(setToken(data?.token))
+        dispatch(setIsLogin(true))
+        dispatch(setRole(data?.data?.user?.role))
+      }
+
       navigate('/dashboard');
     } catch (error) {
       console.log("Error: ", error);

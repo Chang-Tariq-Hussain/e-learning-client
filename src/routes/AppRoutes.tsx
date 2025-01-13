@@ -8,22 +8,24 @@ import Login from '../pages/auth/login/Login'
 import Signup from '../pages/auth/signup/Signup'
 import LandingPage from "../pages/dashboard/landing-page/LandingPage";
 import Home from "../pages/dashboard/home/Home";
+import { useSelector } from "react-redux";
 
 export const routes = {
   public: [
-    { path: "/", element: <Home /> },
+    { path: "/", element: <LandingPage /> },
     { path: "/login", element: <Login /> },
     { path: "/signup", element: <Signup /> },
   ],
   private: [
-    { path: "/dashboard", element: <LandingPage />, roles: ["user", "admin"] },
+    { path: "/dashboard", element: <Home />, roles: ["user", "admin"] },
   ],
 };
 // Example user state (replace with actual auth logic)
-const isAuthenticated = true; // Replace with actual auth state
 const userRoles = ["user"]; // Replace with actual user roles
 
 const AppRoutes: React.FC = () => {
+  const {token} = useSelector((state: any) => state?.auth)
+  const isAuthenticated = token ? true : false
   return (
     <Router>
       <Routes>
@@ -45,6 +47,7 @@ const AppRoutes: React.FC = () => {
                 <PrivateRoute
                   roles={userRoles}
                   allowedRoles={route?.roles}
+                  isAuthenticated={isAuthenticated}
                 >
                   {route.element}
                 </PrivateRoute>

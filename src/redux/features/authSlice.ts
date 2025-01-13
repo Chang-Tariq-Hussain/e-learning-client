@@ -4,7 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   user: null,
   token: "",
-  roll: null,
+  role: null,
   isLogin: false,
   permissions: null,
 };
@@ -25,8 +25,8 @@ const authSlice = createSlice({
     setToken: (state, action) => {
       state.token = action.payload;
     },
-    setRoll: (state, action) => {
-      state.roll = action.payload;
+    setRole: (state, action) => {
+      state.role = action.payload;
     },
     setPermissions: (state, action) => {
       state.permissions = action.payload;
@@ -35,13 +35,13 @@ const authSlice = createSlice({
       state.user = initialState.user;
       state.token = initialState.token;
       state.isLogin = initialState.isLogin;
-      state.roll = initialState.roll;
+      state.role = initialState.role;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setIsLogin, reset, setUser, setToken, setRoll, setPermissions } =
+export const { setIsLogin, reset, setUser, setToken, setRole, setPermissions } =
     authSlice.actions;
 
 export default authSlice.reducer;

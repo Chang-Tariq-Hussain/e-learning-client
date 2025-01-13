@@ -1,0 +1,17 @@
+.avatar-container{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 0;
+    width:200px;
+    .avatar{
+        background: var(--primary-color);
+    }
+
+    p{
+        margin:0;
+        color:var(--natural-dark);
+        font-weight:600;
+    }
+    
+}

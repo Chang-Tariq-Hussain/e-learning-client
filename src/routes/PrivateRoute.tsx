@@ -6,15 +6,16 @@ interface PrivateRouteProps {
   children: React.ReactElement;
   roles?: string[];
   allowedRoles?: string[];
+  isAuthenticated?:boolean
 }
 
 const PrivateRoute: React.FC<PrivateRouteProps> = ({
   children,
   roles,
   allowedRoles,
+  isAuthenticated
 }) => {
-    const token = GetToken();
-    if (!token) {
+    if (!isAuthenticated) {
         return <Navigate to="/login" />;
     }
 

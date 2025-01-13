@@ -105,6 +105,31 @@ a {
   }
 }
 
+.btn-logout{
+  background: crimson;
+  color: var(--background);
+  font-family: var(--font-family);
+  font-weight: 500;
+  padding: 12px 24px;
+  font-style: normal;
+  width: 100%;
+  line-height: normal;
+  // border: 1px solid var(--secondary-color);
+  &:hover{
+    color: var(--background);
+    // border: 1px solid var(--secondary-color);
+    background: rgb(156, 26, 52);;
+    .prefix-icon{
+      svg{
+        path{
+          fill: var(--primary-color-hover);
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+}
+
 .row>*{
   padding:0;
 }

@@ -9,6 +9,8 @@ import ThemeButton from '../../../components/common/theme-button/ThemeButton';
 import { Link, useNavigate } from 'react-router';
 import { useMutation } from 'react-query';
 import { LoginService } from '../../../services/auth.service';
+import { useDispatch } from 'react-redux';
+import { setIsLogin, setRole, setToken, setUser } from '../../../redux/features/authSlice';
 
 const Login: React.FC = () => {
   const {
@@ -17,11 +19,19 @@ const Login: React.FC = () => {
     handleSubmit
   } = useForm();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const loginMutation = useMutation(LoginService);
   
   const onSubmit = async(values:any) => {
     try {
-      await loginMutation.mutateAsync(values);
+      const data = await loginMutation.mutateAsync(values);
+
+      if(data?.success){
+              dispatch(setUser(data?.data?.user))
+              dispatch(setToken(data?.token))
+              dispatch(setIsLogin(true))
+              dispatch(setRole(data?.data?.user?.role))
+            }
       navigate('/dashboard');
     } catch (error) {
       console.log("Error: ", error);
