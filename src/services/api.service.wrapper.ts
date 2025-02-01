@@ -16,8 +16,8 @@ export const Post_Without_Token = (url:string, data = null) => {
   return axiosService.post(constants.BASE_URL + url, data);
 };
 
-const handleLogout = () => {
-  localStorage.removeItem('AUTH_ACCESS_TOKEN');
+export const handleLogout = () => {
+  localStorage.removeItem(constants.LOCAL_STORAGE_TOKEN);
   store.dispatch(reset());
 //   Additional logout logic if needed, like redirecting to the login page
 };

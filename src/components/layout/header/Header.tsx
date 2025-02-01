@@ -7,20 +7,17 @@ import { useNavigate } from 'react-router'
 import TextInput from '../../common/input-field/TextInput'
 import { CiSearch } from 'react-icons/ci'
 import { Avatar, Space } from 'antd'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import ThemeDropdown from '../../common/dropown/ThemeDropdown'
 import ThemeAvatar from '../../common/theme-avatar/ThemeAvatar'
 import ThemeButton from '../../common/theme-button/ThemeButton'
-import { reset } from '../../../redux/features/authSlice'
+import { handleLogout } from '../../../services/api.service.wrapper'
+
 const Header:React.FC = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const {isLogin, user} = useSelector((state:any) => state?.auth);
 
-  const handleLogout = () => {
-    dispatch(reset())
-  }
   const dropdownItems = [{
     label: (
       <>
