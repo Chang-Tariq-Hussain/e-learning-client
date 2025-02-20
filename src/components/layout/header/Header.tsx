@@ -43,7 +43,7 @@ const Header:React.FC = () => {
                           <nav className='nav-menu'>
                             <ul className='nav-menu-items'>
                               <li className='nav-menu-item'>
-                                <Link to='/home'>Home</Link>
+                                <Link to='/dashboard'>Home</Link>
                               </li>
                               <li className='nav-menu-item'>
                                 <Link to='/courses'>Courses</Link>

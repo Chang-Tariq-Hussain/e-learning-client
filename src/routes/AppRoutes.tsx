@@ -9,6 +9,7 @@ import Signup from '../pages/auth/signup/Signup'
 import LandingPage from "../pages/dashboard/landing-page/LandingPage";
 import Home from "../pages/dashboard/home/Home";
 import { useSelector } from "react-redux";
+import CoursesPage from "../pages/dashboard/courses-page/CoursesPage";
 
 export const routes = {
   public: [
@@ -18,6 +19,7 @@ export const routes = {
   ],
   private: [
     { path: "/dashboard", element: <Home />, roles: ["user", "admin"] },
+    { path: "/courses", element: <CoursesPage />, roles: ["user", "admin"] },
   ],
 };
 // Example user state (replace with actual auth logic)
