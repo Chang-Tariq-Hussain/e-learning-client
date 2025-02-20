@@ -1,38 +1,95 @@
-.header-container{
-    // background:#78b659;
-    background:#fff;
-    box-shadow:0 0 4px 2px #eee;
-    height:70px;
-    display:flex;
-    align-items:center;
-   
-    .ant-input-affix-wrapper{
-        min-width:500px;
-    }
+.header-container {
+    background: #fff;
+    box-shadow: 0 0 4px 2px #eee;
+    height: 70px;
+    display: flex;
+    align-items: center;
     
-    .header-main{
-        display:flex;
-        align-items:center;
-        justify-content:space-between;
-
-        .nav-menu{
-            .nav-menu-items{
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                column-gap:40px;
-                margin:0;
-
-                .nav-menu-item{
-                    list-style-type:none;
-                }
-            }
-        }
-    }
-    .logo-img{
-        width:53px;
-        height:53px;
-        object-fit:contain;
+    .header-main {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    //   position: relative;
+  
+      .logo-img {
+        width: 53px;
+        height: 53px;
+        object-fit: contain;
         mix-blend-mode: multiply;
+      }
+  
+      // Hamburger Menu Icon (Hidden on larger screens)
+      .menu-icon {
+        display: none;
+        cursor: pointer;
+      }
+
+      .dropdown-2{
+        display:none;
+      }
+  
+      // Default Navigation Menu (Desktop)
+      .nav-menu {
+        .nav-menu-items {
+          display: flex;
+        //   align-items: center;
+          justify-content: center;
+          column-gap: 40px;
+          margin: 0;
+  
+          .nav-menu-item {
+            list-style-type: none;
+          }
+        }
+      }
     }
-}
+  }
+  
+  // Responsive Styles
+  @media (max-width: 768px) {
+    .header-main {
+      .menu-icon {
+        display: block !important; // Show hamburger menu on small screens
+      }
+  
+      .nav-menu {
+        position: absolute;
+        top: 0px;
+        right: 0;
+        width: 300px;
+        background: white;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        display: none;
+        flex-direction: column;
+        align-items: start;
+        padding: 30px;
+        z-index:100;
+        height:100vh;
+        position:fixed;
+
+        .nav-header{
+            display:flex;
+            justify-content:space-between;
+            width:100%;
+        }
+        .nav-menu-items {
+          flex-direction: column;
+          row-gap: 15px;
+          margin-top:40px !important;
+          padding:0;
+        }
+      }
+  
+      .dropdown{
+        display:none;
+      }
+      .dropdown-2{
+        display:flex !important;   
+      }
+      // Show Menu when active
+      .nav-menu.active {
+        display: flex;
+      }
+    }
+  }
+  

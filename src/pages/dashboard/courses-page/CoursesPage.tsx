@@ -6,7 +6,7 @@ export default function CoursesPage() {
   return (
     <div className='courses-container'>
         <Banner />
-        <LanguageSlider/>
+        {/* <LanguageSlider/> */}
         <Courses heading={'All Courses'}/>
     </div>
   )

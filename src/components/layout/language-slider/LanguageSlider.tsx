@@ -21,11 +21,33 @@ export default function LanguageSlider() {
             <Swiper
               modules={[Autoplay]}
               slidesPerView={4}
-              spaceBetween={20}
+              spaceBetween={50}
               freeMode={true}
               autoplay={{ delay: 2000 }}
               loop={true}
               className="mySwiper"
+              breakpoints={{
+                // When window width is >= 320px
+                320: {
+                  slidesPerView: 2.5,
+                  spaceBetween: 10,
+                },
+                // When window width is >= 480px
+                480: {
+                  slidesPerView: 3,
+                  spaceBetween: 15,
+                },
+                // When window width is >= 768px
+                768: {
+                  slidesPerView: 3.8,
+                  spaceBetween: 20,
+                },
+                // When window width is >= 1024px
+                1024: {
+                  slidesPerView: 4.5,
+                  spaceBetween: 25,
+                },
+              }}
             >
               {images.map((image) => (
                 <SwiperSlide>
