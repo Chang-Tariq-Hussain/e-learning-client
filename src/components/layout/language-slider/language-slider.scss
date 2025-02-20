@@ -1,0 +1,10 @@
+.language-slider-container{
+    background:var(--light, #fff);
+    display:flex;
+    align-items:center;
+    padding:20px 0;
+    .slider-image{
+        height:120px;
+        object-fit:contain;
+    }
+}

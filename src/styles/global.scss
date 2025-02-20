@@ -10,9 +10,11 @@ body {
   background: #ECE9E6;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  
   color: #333;
+
+  max-width:1900px;
+  margin-inline:auto;
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -26,6 +28,7 @@ a {
 }
 .theme-btn{
   width:150px;
+  cursor:pointer;
 }
 
 .theme-btn-primary{
@@ -167,3 +170,27 @@ a {
     background-color: #3ba506;
     /* Darker primary color on hover */
 }
+
+.text-center{
+  text-align:center;
+}
+
+.heading {
+  margin: 60px 0;
+  padding: 10px 0;
+  position: relative;
+  // display: inline-block; // Ensures the bold underline matches the text width
+  border-bottom: 1px solid mediumseagreen; // Thin underline spanning full width
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -3px; // Adjust the distance from the thin underline
+    left: 0;
+    width: 200px; // Full-width thin underline
+    height: 5px;
+    background: mediumseagreen;
+  }
+}
+
+

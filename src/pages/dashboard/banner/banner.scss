@@ -1,0 +1,16 @@
+
+.banner-container{
+    background:mediumseagreen;
+    color:var(--light, #fff);
+    min-height:300px;
+
+    .search-field{
+        max-width:600px;
+        margin:0 auto;
+        padding-top:80px;
+    }
+
+    h3{
+        padding-top:20px;
+    }
+}

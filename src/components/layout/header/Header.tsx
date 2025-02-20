@@ -3,7 +3,7 @@ import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import "./header.scss"
 import logoImage from '../../../assets/images/e-learning.avif'
-import { useNavigate } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 import TextInput from '../../common/input-field/TextInput'
 import { CiSearch } from 'react-icons/ci'
 import { Avatar, Space } from 'antd'
@@ -40,7 +40,22 @@ const Header:React.FC = () => {
                     {
                       isLogin && (
                         <>
-                          <TextInput type="search" suffix={<CiSearch />} placeholder="Search here..."/>
+                          <nav className='nav-menu'>
+                            <ul className='nav-menu-items'>
+                              <li className='nav-menu-item'>
+                                <Link to='/home'>Home</Link>
+                              </li>
+                              <li className='nav-menu-item'>
+                                <Link to='/courses'>Courses</Link>
+                              </li>
+                              <li className='nav-menu-item'>
+                                <Link to='/articles'>Articles</Link>
+                              </li>
+                              <li className='nav-menu-item'>
+                                <Link to='/about'>About</Link>
+                              </li>
+                            </ul>
+                          </nav>
                           <ThemeDropdown items={dropdownItems}>
                             <Avatar style={{background:"#549e2f"}}>{user?.name[0].toUpperCase()}</Avatar>
                           </ThemeDropdown>
