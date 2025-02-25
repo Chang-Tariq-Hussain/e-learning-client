@@ -1,0 +1,62 @@
+.articles-page{
+    min-height:40vh;
+    padding:60px 0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+
+
+    .heading{
+        margin:20px 0;
+    }
+    .top-content{
+        display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:40px 0;
+    }
+
+    .article-container{
+        margin-right:20px;
+
+
+    }
+    h2{
+        font-size:2rem;
+    }
+    p{
+        margin:5px 0;
+        font-size:0.9rem;
+        color:#535353;
+    }
+    .subscribe-field {
+        max-width:600px;
+        margin-inline:auto;
+        display:flex;
+        .ant-input-affix-wrapper{
+            padding:5px 5px 5px 10px;
+            display:flex;
+            align-items:center;
+            width:400px;
+            margin:20px 0;
+        }
+        button{
+            border:none;
+            height:100%;
+            font-size:1rem;
+            padding:10px;
+            border-radius:5px;
+            background:var(--primary-color);
+            color:var(--light, #fff);
+        }
+    }
+}
+
+// @media(max-width:992px){
+//     .articles{
+//         display:grid;
+//         grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+//         gap:20px;
+//     }
+// }

@@ -10,6 +10,7 @@ import LandingPage from "../pages/dashboard/landing-page/LandingPage";
 import Home from "../pages/dashboard/home/Home";
 import { useSelector } from "react-redux";
 import CoursesPage from "../pages/dashboard/courses-page/CoursesPage";
+import ArticlesPage from "../pages/dashboard/articles/ArticlesPage";
 
 export const routes = {
   public: [
@@ -20,10 +21,11 @@ export const routes = {
   private: [
     { path: "/dashboard", element: <Home />, roles: ["user", "admin"] },
     { path: "/courses", element: <CoursesPage />, roles: ["user", "admin"] },
+    { path: "/articles", element: <ArticlesPage />, roles: ["user", "admin"] },
   ],
 };
-// Example user state (replace with actual auth logic)
-const userRoles = ["user"]; // Replace with actual user roles
+
+const userRoles = ["user"]; 
 
 const AppRoutes: React.FC = () => {
   const {token} = useSelector((state: any) => state?.auth)
@@ -63,3 +65,4 @@ const AppRoutes: React.FC = () => {
 };
 
 export default AppRoutes;
+
