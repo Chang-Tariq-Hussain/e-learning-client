@@ -96,7 +96,7 @@ const Header: React.FC = () => {
               {isLogin && (
                 <div className="dropdown">
                   <ThemeDropdown items={dropdownItems}>
-                    <Avatar style={{ background: "#549e2f" }}>
+                    <Avatar style={{ background: "mediumseagreen" }}>
                       {user?.name[0].toUpperCase()}
                     </Avatar>
                   </ThemeDropdown>

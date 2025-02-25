@@ -1,65 +1,96 @@
 .course-card-container {
-    display: flex;
-    flex-direction: column;
-    gap:20px;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%;
+  padding: 16px;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .image-container {
+    position: relative;
     width: 100%;
-    padding: 16px;
-    transition: transform 0.3s ease-in-out;
-  
-    &:hover {
-      transform: translateY(-5px);
-    }
-  
+    height: 180px;
+    border-radius: 8px;
+    overflow: hidden;
+
     img {
       width: 100%;
-      height: 180px;
+      height: 100%;
       object-fit: contain;
       border-radius: 8px;
     }
-  
-    small {
-      color: #777;
-      font-size: 14px;
-      margin-top: 8px;
-      display: block;
-    }
-  
-    h3 {
-      font-size: 20px;
-      color: #333;
-    //   margin: 8px 0;
-    }
-  
-    p {
-      font-size: 14px;
-      color: #666;
-    //   margin: 8px 0;
-    }
-  
-    .card-footer {
+
+    .play-icon-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-    //   margin-top: 12px;
-  
-      .rating {
-        background: #ffcc00;
-        padding: 4px 8px;
-        border-radius: 8px;
-        font-size: 14px;
-        font-weight: bold;
-        color: #333;
+      justify-content: center;
+      background-color: rgba(0, 0, 0, 0.5); // Semi-transparent overlay
+      // backdrop-filter: blur(2px); // Optional: Adds a blur effect
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      cursor:pointer;
+
+      svg {
+        width: 48px;
+        height: 48px;
+        color: #fff; // White color for the icon
+        opacity: 0.8;
       }
-  
-      .price {
-        font-size: 18px;
-        font-weight: bold;
-        color: #28a745;
-      }
+    }
+
+    &:hover .play-icon-overlay {
+      opacity: 0.7; // Show the overlay on hover
     }
   }
-  
+
+  small {
+    color: #777;
+    font-size: 14px;
+    margin-top: 8px;
+    display: block;
+  }
+
+  h3 {
+    font-size: 20px;
+    color: #333;
+  }
+
+  p {
+    font-size: 14px;
+    color: #666;
+  }
+
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .rating {
+      background: #ffcc00;
+      padding: 4px 8px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #28a745;
+    }
+  }
+}
